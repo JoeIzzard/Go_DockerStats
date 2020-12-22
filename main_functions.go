@@ -15,7 +15,7 @@ func GetContainer(container_id string) (Status, error) {
 func GetAllContainers() (map[string]Status, error) {
 	// Get container ID's
 	ids, _ := getAllContainerIDs()
-	var containers [string]Status
+	var containers map[string]Status
 	
 	for _, id := range ids {
 		containers[id], _ = GetContainer(id)
